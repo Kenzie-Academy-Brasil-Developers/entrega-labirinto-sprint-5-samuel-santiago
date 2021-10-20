@@ -69,9 +69,10 @@ let divAtual;
 
 
 function moveAvatar(){
-    
+   
     document.addEventListener('keydown', (event)=>{
         const keyName = event.key;
+        
         
         if(keyName === 'ArrowDown'){
             divAtual = document.getElementById(`[${linhaAtual+1}][${colunaAtual}]`);
@@ -112,13 +113,21 @@ moveAvatar();
 console.log(divAtual);
 console.log(final);
 
+
 //ESCREVER ESSA FUNÇÃO DE WINNER
 
 
-// function winner (){
+function winner (){
 
-//     if(divAtual === final){
-//         console.log('VC AGNHOU')       
-//     }
-// }
-// winner()
+    if(divAtual === final){
+        const mensagemContainer = document.createElement('div');
+        mensagemContainer.className = 'mensagemContainer';
+        container.appendChild(mensagemContainer);
+        
+        const mensagemParagrafo = document.createElement('p');
+        mensagemParagrafo.innerHTML = 'Você venceu, Meu Caro!!!'
+        mensagemContainer.appendChild(mensagemParagrafo);
+    }
+    
+}
+winner()
